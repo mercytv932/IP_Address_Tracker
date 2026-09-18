@@ -7,8 +7,7 @@ export type IpData = {
     postalCode: string;
     lat: number;
     lng: number;
+    timezone: string;
   };
-  timezone: string;
   isp: string;
 };
-

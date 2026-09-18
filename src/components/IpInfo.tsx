@@ -20,7 +20,7 @@ function IpInfo({ data }: IpInfoProps) {
       </div>
       <div className="timezone">
         <h6>TIMEZONE</h6>
-        <h2>{data.timezone}</h2>
+        <h2>{data.location.timezone}</h2>
       </div>
       <div className="isp">
         <h6>ISP</h6>

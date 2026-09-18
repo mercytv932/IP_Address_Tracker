@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 interface SearchBarProps {
   onSearch(value: string): void;
 }
@@ -8,6 +8,7 @@ function SearchBar({ onSearch }: SearchBarProps) {
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
+    onSearch(value);
   }
 
   return (
