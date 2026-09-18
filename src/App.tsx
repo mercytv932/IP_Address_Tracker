@@ -3,7 +3,7 @@ import IpInfo from "./components/IpInfo";
 import SearchBar from "./components/SearchBar";
 import { useIpAddress } from "./hooks/useIpAddress";
 function App() {
-  const { data, loading, error } = useIpAddress();
+  const { data, loading, error, searchIp } = useIpAddress();
 
   if (loading) {
     return <div>Loading IP address...</div>;
@@ -12,15 +12,11 @@ function App() {
   if (error) {
     return <div>{error}</div>;
   }
-  if (!data) {
-    return <div>No IP data yet.</div>;
-  }
-
   return (
     <div>
       <Header />
-      <SearchBar />
-      <IpInfo data={data} />
+      <SearchBar onSearch={searchIp} />
+      {data && <IpInfo data={data} />}
     </div>
   );
 }

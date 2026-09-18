@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 interface SearchBarProps {
   onSearch(value: string): void;
 }
@@ -6,16 +6,20 @@ interface SearchBarProps {
 function SearchBar({ onSearch }: SearchBarProps) {
   const [value, setValue] = useState("");
 
+  function onSubmit(event: FormEvent) {
+    event.preventDefault();
+  }
+
   return (
-    <div>
+    <form onSubmit={onSubmit}>
       <input
         type="text"
         placeholder="Search for any IP address or domain"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button>&gt;</button>
-    </div>
+      <button type="submit">&gt;</button>
+    </form>
   );
 }
 
