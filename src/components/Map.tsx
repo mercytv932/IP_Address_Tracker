@@ -1,5 +1,4 @@
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
-// import type { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
 interface MapProps {
   lat: number;
@@ -8,11 +7,13 @@ interface MapProps {
 
 function Map({ lat, lng }: MapProps) {
   return (
-    <MapContainer
-      center={[lat, lng]}
-      zoom={13}
-      scrollWheelZoom={false}
-    ></MapContainer>
+    <MapContainer center={[lat, lng]} zoom={13} scrollWheelZoom={false}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="&copy; OpenStreetMap contributors"
+      />
+      <Marker position={[lat, lng]} />
+    </MapContainer>
   );
 }
 
