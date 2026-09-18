@@ -15,7 +15,7 @@ function App() {
     return <div>{error}</div>;
   }
   return (
-    <div>
+    <div className="app">
       <Header />
       <SearchBar onSearch={searchIp} />
       {data && <IpInfo data={data} />}
