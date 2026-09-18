@@ -2,7 +2,7 @@ import { useState } from "react";
 import { fetchIpData } from "../services/ipApi";
 import type { IpData } from "../types/ip";
 
-export function useIpAdress() {
+export function useIpAddress() {
   const [data, setData] = useState<IpData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

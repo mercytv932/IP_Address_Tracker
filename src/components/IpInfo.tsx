@@ -11,9 +11,21 @@ function IpInfo({ data }: IpInfoProps) {
         <h6>IP ADDRESS</h6>
         <h2>{data.ip}</h2>
       </div>
-      <div className="location"></div>
-      <div className="timezone"></div>
-      <div className="isp"></div>
+      <div className="location">
+        <h6>LOCATION</h6>
+        <h2>
+          {data.location.city}, {data.location.region},{" "}
+          {data.location.postalCode}
+        </h2>
+      </div>
+      <div className="timezone">
+        <h6>TIMEZONE</h6>
+        <h2>{data.timezone}</h2>
+      </div>
+      <div className="isp">
+        <h6>ISP</h6>
+        <h2>{data.isp}</h2>
+      </div>
     </div>
   );
 }
