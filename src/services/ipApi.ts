@@ -7,7 +7,7 @@ export async function fetchIpData(ip: string): Promise<IpData> {
     `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`,
   );
 
-  if (!response) {
+  if (!response.ok) {
     throw new Error("Failed to fetch IP information");
   }
   return response.json();
