@@ -5,9 +5,10 @@ export type IpData = {
     region: string;
     country: string;
     postalCode: string;
-    timezone: string;
     lat: number;
     lng: number;
   };
+  timezone: string;
   isp: string;
 };
+
