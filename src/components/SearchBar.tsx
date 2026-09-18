@@ -5,9 +5,15 @@ interface SearchBarProps {
 
 function SearchBar({ onSearch }: SearchBarProps) {
   const [value, setValue] = useState("");
+
   return (
     <div>
-      <input type="text" placeholder="Search for any IP address or domain" />
+      <input
+        type="text"
+        placeholder="Search for any IP address or domain"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
       <button>&gt;</button>
     </div>
   );
