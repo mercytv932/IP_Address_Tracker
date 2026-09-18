@@ -99,3 +99,22 @@ form button:hover {
 .ip-result > div:not(:last-child) {
   border-right: 1px solid #e5e5e5;
 }
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .ip-result {
+    flex-direction: column;
+    text-align: center;
+    top: 180px;
+    gap: 20px;
+  }
+
+  .ip-result > div {
+    padding: 0;
+  }
+
+  .ip-result > div:not(:last-child) {
+    border-right: none;
+  }
+}

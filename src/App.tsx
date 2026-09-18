@@ -1,3 +1,4 @@
+import "./App.css";
 import Header from "./components/Header";
 import IpInfo from "./components/IpInfo";
 import SearchBar from "./components/SearchBar";
